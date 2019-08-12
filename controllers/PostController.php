@@ -11,11 +11,13 @@ namespace app\controllers;
 use Yii;
 class PostController extends AppController
 {
-    public function actionTest(){
-       $ageArr = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
-//       var_dump(Yii::$app);
-//        $this->debug(Yii::$app);
-        $this->debug($ageArr);
+    public $layout = 'basic';
+    public function actionIndex(){
        return $this->render('test');
+    }
+
+    public function actionShow(){
+//        $this->layout='basic';
+        return $this->render('show');
     }
 }

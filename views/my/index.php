@@ -8,7 +8,7 @@
     }
     ?>
 <br>
-<h2>Hmm.... this is youre id, may be nor yours, but now it is here:</h2>
+<h2>Hmm.... this is youre id, may be not yours, but now it is here:</h2>
 <?php
 echo $id;
 ?>
