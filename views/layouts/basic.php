@@ -31,8 +31,19 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<h1>Basic layouts</h1>
-<?=$content ?>
+<div class="wrap">
+    <div class="container">
+        <ul class="nav nav-pills ">
+
+            <li role="presentation" class="active"><?= Html::a('Главная','/') ?></li>
+            <li role="presentation"><?= Html::a('Все статьи',['post/index']) ?></li>
+            <li role="presentation"><?= Html::a('Статья',['post/show']) ?></li>
+        </ul>
+
+        <?=$content ?>
+
+    </div>
+    </div>
 <?php $this->endBody() ?>
 </body>
 </html>
