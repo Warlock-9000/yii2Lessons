@@ -13,9 +13,19 @@ class PostController extends AppController
 {
     public $layout = 'basic';
 
+    public function beforeAction($action)
+    {
+//        return parent::beforeAction($action);
+        if ($action->id == 'index'){
+            $this->enableCsrfValidation = false;
+        }
+        return parent::beforeAction($action);
+    }
+
     public function actionIndex(){
         if (Yii::$app->request->isAjax){
-            $this->debug($_GET);
+//            $this->debug($_POST);
+            $this->debug(Yii::$app->request->post());
             return 'test';
         }
        return $this->render('test');
