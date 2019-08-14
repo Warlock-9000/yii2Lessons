@@ -33,6 +33,9 @@ class PostController extends AppController
 
     public function actionShow(){
 //        $this->layout='basic';
+        $this->view->title='Одна статья';
+        $this->view->registerMetaTag(['name' => 'keywords','content'=> 'Ключевые, слова']);
+        $this->view->registerMetaTag(['name' => 'description','description'=> 'Описание страницы/Description']);
         return $this->render('show');
     }
 }

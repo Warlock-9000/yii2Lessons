@@ -5,7 +5,15 @@
  * Date: 12.08.2019
  * Time: 21:46
  */
+
+//$this->title = 'Одна статья';
 ?>
+
+<?php $this->beginBlock('block1'); ?>
+<h2> Заголовок страницы</h2>
+<?php $this->endBlock(); ?>
+
+
 <h1>Show Action</h1>
 
 <button class="btn btn-success" id="btn">Click me...</button>
