@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\TestForm;
 class PostController extends AppController
 {
     public $layout = 'basic';
@@ -24,11 +25,13 @@ class PostController extends AppController
 
     public function actionIndex(){
         if (Yii::$app->request->isAjax){
-//            $this->debug($_POST);
             $this->debug(Yii::$app->request->post());
             return 'test';
         }
-       return $this->render('test');
+
+        $model = new TestForm();
+
+       return $this->render('test',compact(['model']));
     }
 
     public function actionShow(){
