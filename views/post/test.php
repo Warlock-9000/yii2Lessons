@@ -7,6 +7,20 @@ use yii\helpers\Html;
 
 <?php //debug($model); ?>
 
+<?php if (Yii::$app->session->hasFlash('success')): ?>
+    <div class="alert alert-success">
+        <button type="button " class="close" data-dismiss="alert">&times;</button>
+        <?php echo Yii::$app->session->getFlash('success');?>
+    </div>
+<?php endif; ?>
+
+<?php if (Yii::$app->session->hasFlash('error')): ?>
+    <div class="alert alert-danger">
+        <button type="button " class="close" data-dismiss="alert">&times;</button>
+        <?php echo Yii::$app->session->getFlash('error');?>
+    </div>
+<?php endif; ?>
+
 <?php $form = ActiveForm::begin(['options'=>['id'=>'testForm']]); ?>
     <?php echo $form->field($model, 'name') ?>
     <?php echo $form->field($model,'email')->input('email ') ?>
