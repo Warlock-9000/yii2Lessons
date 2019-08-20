@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\Category;
 use Yii;
 use app\models\TestForm;
 class PostController extends AppController
@@ -49,6 +50,8 @@ class PostController extends AppController
         $this->view->title='Одна статья';
         $this->view->registerMetaTag(['name' => 'keywords','content'=> 'Ключевые, слова']);
         $this->view->registerMetaTag(['name' => 'description','description'=> 'Описание страницы/Description']);
-        return $this->render('show');
+
+        $getSql = category::find()->all();
+        return $this->render('show',compact('getSql'));
     }
 }

@@ -16,6 +16,8 @@
 
 <h1>Show Action</h1>
 
+<?php debug($getSql) ?>
+
 <button class="btn btn-success" id="btn">Click me...</button>
 
 <?php
